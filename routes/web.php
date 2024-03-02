@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\RegisterControlller;
+use App\Http\Controllers\UploadController;
 use Illuminate\Support\Facades\Route;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -75,3 +76,5 @@ Route::get('/register',function(){
 });
 
 Route::post('/postRegister',[RegisterControlller::class,'postRegister']);
+Route::get('/upload',[UploadController::class,'getFile']);
+Route::post('/upload',[UploadController::class,'uploadFile'])->name('uploadFile');
